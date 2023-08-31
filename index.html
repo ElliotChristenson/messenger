@@ -1,0 +1,67 @@
+<!doctype html>
+<!-- Don't forget to validate: -->
+<!-- https://validator.w3.org/ -->
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Messenger 1.0</title>
+
+        <!-- this line is to include the FontAwesome icon set -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
+
+        <!-- This is how the web page knows about YOUR CSS file! -->
+        <link rel="stylesheet" href="messenger.css" type="text/css">
+    </head>
+    <body>
+        <div id="messenger">
+                <div id="user-info">
+                    <button id="evan" value="evan">evan</button>
+                    <button id="wendy" value="wendy">wendy</button>
+                    <button id="annie" value="annie">annie</button>
+                    <button id="drew" value="drew">drew</button>
+                    <button id="adam" value="adam">adam</button>
+                    <form id="server-info-form">
+                        <section id="sender-section">
+                            <label for="sender" id="sender-label">Sender</label>
+                            <input type="text" value="elliot" id="sender">
+                        <section>
+                        <button type="button" id="switch-button">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        <section id="recipient-section">
+                            <label for="recipient" id="recipient-label">Recipient</label>
+                            <input type="text" value="gina" id="recipient">
+                        </section>
+                        <button type="button" id="server-submit">Connect</button>
+                        <audio id="connect-sound">
+                            <source src="connect.mp3" type="audio/mpeg">
+                        </audio>
+                    </form>
+                    <form id="send-message-form" class="hidden">
+                        <section id="message-section">
+                            <label for="message-text" id="message-text-label">Message</label>
+                            <input type="text" placeholder="Enter Message Here!" id="message-text">
+                        </section>
+                        <button type="button" id="message-submit">Send</button><button type="button" id="delete-messages">Kill 'em All</button>
+                    </form>
+                </div>
+                <div id="message-output"></div>
+            </div>
+        <div id="dim" class="hidden">&nbsp;</div>
+        <div id="alert-message" class="hidden">
+            <div id="alert-content">
+                <div id="alert-body">
+                    <h3 id="alert-header">&nbsp;</h3>
+                    <p id="alert-text">&nbsp;</p>
+                    <audio id="alert-sound">
+                        <source src="receive.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <button type="button" id="alert-close">Close</button>
+            </div>
+        </div>
+        <script src="messenger.js"></script>
+    </body>
+</html>
